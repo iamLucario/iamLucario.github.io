@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, 
+user-scalable=no">
+  <title>SGPA Calculator</title>
+  <link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class='login'>
+  <div class='login_title'>
+    <span>Find Your SGPA</span>
+    <br>
+    <span>Enter Your Grades Like O, A+ etc</span>
+  </div>
+  <div class='login_fields'>
+   
+    <div class='login_fields__password'>
+      <input placeholder='Cultural Education' type='text' name="cult">
+      <input placeholder='Technical Communication' type='text' name="tc">
+      <input placeholder='EOC' type='text' name="eoc">
+      <input placeholder='IEE' type='text' name="iee">
+      <input placeholder='OOP' type='text' name="oop">
+      <input placeholder='MIS' type='text' name="mis">
+      <input placeholder='IBS' type='text' name="ibs">
+      <input placeholder='CEM' type='text' name="cem">
+
+
+      <!-- <div class='validation'>
+        <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/tick.png'>
+      </div> -->
+    </div>
+    
+    <div class='login_fields__submit'>
+      <input type='submit' value='Calculate' onclick="calcSum()">
+    </div>
+  </div>
+  <div class='success'>
+    <h2 id="joke"></h2> 
+    <p id="sgpa">Welcome back</p>
+  </div>
+  <div class='disclaimer'>
+    <p>I'm not sure if this is the right way to calculate SGPA</p>
+  </div>
+</div>
+<div class='authent'>
+  <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/puff.svg'>
+  <p>Calculating</p>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script><script  src="./script.js"></script>
+<script>
+
+  function swit(a)
+  {
+      switch (a) {
+      case "O":
+          return 10;
+      case "A+":
+          return 9.5;
+      case "A":
+          return 9;
+      case "B+":
+          return 8;
+      case "B":
+          return 7;
+      case "C":
+          return 6;
+      case "P":
+          return 5;
+      case "F":
+          return 0;
+              }
+      return 0;
+  }
+
+  function calcSum() {
+
+
+      let Cedu = document.getElementsByName("cult")[0].value;
+      let TechCom = document.getElementsByName("tc")[0].value;
+      let EOC = document.getElementsByName("eoc")[0].value;
+      let IEE = document.getElementsByName("iee")[0].value;
+      let OOP = document.getElementsByName("oop")[0].value;
+      let MIS = document.getElementsByName("mis")[0].value;
+      let IBS = document.getElementsByName("ibs")[0].value;
+      let CEM = document.getElementsByName("cem")[0].value;
+
+      var mis = swit(MIS) * 3;
+      var oop = swit(OOP) * 4;
+      var iee = swit(IEE) * 3;
+      var cem = swit(CEM) * 3;
+      var ibs = swit(IBS) * 2;
+      var cedu = swit(Cedu) * 2;
+      var tech = swit(TechCom) * 3;
+      var eoc = swit(EOC) * 3;
+      var sum = mis + oop + iee + cem + ibs + cedu + tech + eoc;
+      sum /= 23;
+      sum = sum.toFixed(3);
+
+
+      if(sum > 9){
+        document.getElementById("joke").innerHTML = "Topper!!!"
+      }
+      else if(sum > 7){
+        document.getElementById("joke").innerHTML = "Nice!!"
+      }
+      else {
+        document.getElementById("joke").innerHTML = "You're a joke lol"
+      }
+      document.getElementById("sgpa").innerHTML = "SGPA: " + sum;
+  }
+</script>
+
+</body>
+</html>
