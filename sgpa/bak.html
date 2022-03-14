@@ -27,7 +27,6 @@ user-scalable=no">
       <input placeholder='MIS' type='text' name="mis">
       <input placeholder='IBS' type='text' name="ibs">
       <input placeholder='CEM' type='text' name="cem">
-      <input placeholder='IDM' type='text' name="idm">
 
 
       <!-- <div class='validation'>
@@ -90,25 +89,17 @@ user-scalable=no">
       let MIS = document.getElementsByName("mis")[0].value;
       let IBS = document.getElementsByName("ibs")[0].value;
       let CEM = document.getElementsByName("cem")[0].value;
-      let IDM = document.getElementsByName("idm")[0].value;
 
-      const mis = swit(MIS) * 3;
-      const oop = swit(OOP) * 4;
-      const iee = swit(IEE) * 3;
-      const cem = swit(CEM) * 3;
-      const ibs = swit(IBS) * 2;
-      const cedu = swit(Cedu) * 2;
-      const tech = swit(TechCom) * 3;
-      const eoc = swit(EOC) * 3;
-      const idm = swit(IDM) * 3;
-      console.log(idm);
-      if(idm == 0){
-        var sum = mis + oop + iee + cem + ibs + cedu + tech + eoc;
-        sum /= 23;
-      } else{
-        var sum = mis + oop + iee + cem + ibs + cedu + tech + eoc + idm;
-        sum /= 25;
-      }
+      var mis = swit(MIS) * 3;
+      var oop = swit(OOP) * 4;
+      var iee = swit(IEE) * 3;
+      var cem = swit(CEM) * 3;
+      var ibs = swit(IBS) * 2;
+      var cedu = swit(Cedu) * 2;
+      var tech = swit(TechCom) * 3;
+      var eoc = swit(EOC) * 3;
+      var sum = mis + oop + iee + cem + ibs + cedu + tech + eoc;
+      sum /= 23;
       sum = sum.toFixed(3);
 
 
