@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,
 user-scalable=no">
   <title>SGPA Calculator</title>
   <link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'><link rel="stylesheet" href="./style.css">
@@ -17,7 +17,7 @@ user-scalable=no">
     <span>Enter Your Grades Like O, A+ etc</span>
   </div>
   <div class='login_fields'>
-   
+
     <div class='login_fields__password'>
       <input placeholder='Cultural Education' type='text' name="cult">
       <input placeholder='Technical Communication' type='text' name="tc">
@@ -34,13 +34,13 @@ user-scalable=no">
         <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/tick.png'>
       </div> -->
     </div>
-    
+
     <div class='login_fields__submit'>
       <input type='submit' value='Calculate' onclick="calcSum()">
     </div>
   </div>
   <div class='success'>
-    <h2 id="joke"></h2> 
+    <h2 id="joke"></h2>
     <p id="sgpa">Welcome back</p>
   </div>
   <div class='disclaimer'>
@@ -100,7 +100,7 @@ user-scalable=no">
       const cedu = swit(Cedu) * 2;
       const tech = swit(TechCom) * 3;
       const eoc = swit(EOC) * 3;
-      const idm = swit(IDM) * 3;
+      const idm = swit(IDM) * 2;
       console.log(idm);
       if(idm == 0){
         var sum = mis + oop + iee + cem + ibs + cedu + tech + eoc;
