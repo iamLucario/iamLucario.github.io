@@ -18,7 +18,7 @@ function aInt (aInt){
   const asm2 = parseInt(asm1);
   // Parse the integer from string
   let value = null;
-  if(aInt.includes("@") && asm2 > 0){
+  if(aInt.includes("@")){
     // Check if the provided value is a valid A instruction
     let asm3 =  asm2.toString(2)
     let length = 16 - asm3.length
